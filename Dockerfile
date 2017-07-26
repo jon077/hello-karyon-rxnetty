@@ -41,5 +41,3 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/hello-kary
 
 ## EXPOSE SERVLET PORT
 EXPOSE 8080
-
-
