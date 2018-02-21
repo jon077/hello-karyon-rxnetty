@@ -33,10 +33,11 @@ RUN gradle -v
 #COPY PROJECT
 ADD ./ /hello-karyon
 
-RUN cd /hello-karyon && gradle build
+RUN cd /hello-karyon && gradle clean fatJar
 
 
 
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/hello-karyon/build/libs/hello-karyon-rxnetty-all-0.1.0.jar"]
 
 ## EXPOSE SERVLET PORT
 EXPOSE 8080
