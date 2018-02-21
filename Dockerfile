@@ -17,7 +17,8 @@ RUN java -version
 ARG GRADLE_VERSION=2.9
 
 # download and install gradle
-ADD https://services.gradle.org/distributions/gradle-$GRADLE_VERSION-bin.zip gradle-$GRADLE_VERSION-bin.zip
+#ADD https://services.gradle.org/distributions/gradle-$GRADLE_VERSION-bin.zip gradle-$GRADLE_VERSION-bin.zip
+COPY ./gradle-$GRADLE_VERSION-bin.zip gradle-$GRADLE_VERSION-bin.zip
 RUN unzip -qq gradle-$GRADLE_VERSION-bin.zip \
   && rm gradle-$GRADLE_VERSION-bin.zip \
   && mkdir -p /usr/share/ \
@@ -30,11 +31,9 @@ RUN gradle -v
 
 
 #COPY PROJECT
-ADD ./* /hello-karyon
+ADD ./ /hello-karyon
 
-RUN cd /hello-karyon && ls -l
-
-RUN gradle build
+RUN cd /hello-karyon && gradle build
 
 
 
