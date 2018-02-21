@@ -29,5 +29,17 @@ ENV GRADLE_HOME /usr/share/gradle-$GRADLE_VERSION
 RUN gradle -v
 
 
+#COPY PROJECT
+ADD ./* /hello-karyon
+
+RUN cd /hello-karyon && ls -l
+
+RUN gradle build
+
+
+
+
 ## EXPOSE SERVLET PORT
 EXPOSE 8080
+
+
