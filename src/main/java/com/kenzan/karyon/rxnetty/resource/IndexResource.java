@@ -59,8 +59,8 @@ public class IndexResource implements RequestHandler<ByteBuf, ByteBuf>{
                         } catch (Exception e){
                             e.printStackTrace();
                         }
-                        response.writeString("<html><head><style>body{text-align:center;font-family:'Lucida Grande'}</style></head><body><img src='http://kenzan.com/wp-content/themes/kenzan/images/logo-reg.png' /><h2>Example Spinnaker Application</h2><h3>Instance Id " + instanceId + "</h3><h3>$USERDATA ENV VAR: " + userdata + "</h3></body></html>");
-                        //response.writeString("<html><head><style>body{text-align:center;font-family:'Lucida Grande'}</style></head><body><img src='https://yt3.ggpht.com/-30OzU0gNxIM/AAAAAAAAAAI/AAAAAAAAAAA/i_LJjRk2H2w/s100-mo-c-c0xffffffff-rj-k-no/photo.jpg' /><h2>Hello Providence Geeks!</h2><h3>Instance Id " + instanceId + "</h3><h3>$USERDATA ENV VAR: " + userdata + "</h3></body></html>");
+                        //response.writeString("<html><head><style>body{text-align:center;font-family:'Lucida Grande'}</style></head><body><img src='http://kenzan.com/wp-content/themes/kenzan/images/logo-reg.png' /><h2>Example Spinnaker Application</h2><h3>Instance Id " + instanceId + "</h3><h3>$USERDATA ENV VAR: " + userdata + "</h3></body></html>");
+                        response.writeString("<html><head><style>body{text-align:center;font-family:'Lucida Grande'}</style></head><body><img src='https://yt3.ggpht.com/-30OzU0gNxIM/AAAAAAAAAAI/AAAAAAAAAAA/i_LJjRk2H2w/s100-mo-c-c0xffffffff-rj-k-no/photo.jpg' /><h2>Hello Providence Geeks!</h2><h3>Instance Id " + instanceId + "</h3><h3>$USERDATA ENV VAR: " + userdata + "</h3></body></html>");
                         return response.close();
                     }
                 });
