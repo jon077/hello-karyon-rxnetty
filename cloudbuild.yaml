@@ -1,0 +1,9 @@
+
+steps:
+- name: 'gcr.io/cloud-builders/java/gradle'
+  args: ['fatJar']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ["build", "-t", "gcr.io/$PROJECT_ID/hello-karyon-rxnetty:$REVISION_ID", "-t", "gcr.io/$PROJECT_ID/hello-karyon-rxnetty:latest", "-f", "Dockerfile", "."]
+images:
+  - 'gcr.io/$PROJECT_ID/hello-karyon-rxnetty:$REVISION_ID'
+  - 'gcr.io/$PROJECT_ID/hello-karyon-rxnetty:latest'
